@@ -89,7 +89,7 @@ export default defineNuxtSchema({
         siteName: field({
           type: 'string',
           title: 'Site Name',
-          description: 'Name used in ogSiteName and used as second part of your page title (My page title - Nuxt UI Pro).',
+          description: 'Name used in ogSiteName and used as second part of your page title (My page title - Nuxt UI).',
           icon: 'i-mdi-web',
           default: []
         })

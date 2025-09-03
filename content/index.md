@@ -1,8 +1,8 @@
 ---
 seo:
   title: Nuxt Docs Template
-  description: Nuxt UI Pro is a collection of premium Vue components built on top
-    of Nuxt UI to create beautiful & responsive Nuxt applications in minutes.
+  description: Nuxt UI is a collection of Vue components 
+    to create beautiful & responsive Nuxt applications in minutes.
 ---
 
 ::u-page-hero
@@ -11,19 +11,19 @@ orientation: horizontal
 ---
   :::prose-pre
   ---
-  code: npx nuxi init -t github:nuxt-ui-pro/docs
+  code: npx nuxi init -t github:nuxt-ui-templates/docs
   filename: Terminal
   ---
   ```bash
-  npx nuxi init -t github:nuxt-ui-pro/docs
+  npx nuxi init -t github:nuxt-ui-templates/docs
   ```
   :::
 
 #title
-Build your docs with Nuxt UI Pro
+Build your docs with Nuxt UI
 
 #description
-Nuxt UI Pro is a collection of premium components built on top of Nuxt UI to create beautiful & responsive applications in minutes.
+Nuxt UI is a collection of components to create beautiful & responsive applications in minutes.
 
 #links
   :::u-button
@@ -41,7 +41,7 @@ Nuxt UI Pro is a collection of premium components built on top of Nuxt UI to cre
   icon: i-simple-icons-github
   size: xl
   target: _blank
-  to: https://github.com/nuxt-ui-pro/docs
+  to: https://github.com/nuxt-ui-templates/docs
   variant: subtle
   ---
   Use this template
@@ -58,11 +58,11 @@ All-in-one documentation template
   color: neutral
   size: lg
   target: _blank
-  to: https://ui.nuxt.com/getting-started/installation/pro/nuxt
+  to: https://ui.nuxt.com/getting-started/installation
   trailingIcon: i-lucide-arrow-right
   variant: subtle
   ---
-  Discover Nuxt UI Pro v3
+  Discover Nuxt UI v4
   :::
 
 #features
@@ -154,7 +154,7 @@ All-in-one documentation template
       target: _blank
       icon: i-lucide-arrow-right
     - label: Clone on GitHub
-      to: 'https://github.com/nuxt-ui-pro/landing'
+      to: 'https://github.com/nuxt-ui-templates/landing'
       target: _blank
       variant: subtle
       icon: i-simple-icons-github

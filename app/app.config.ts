@@ -41,12 +41,12 @@ export default defineAppConfig({
       'aria-label': 'Nuxt Website'
     }, {
       'icon': 'i-simple-icons-discord',
-      'to': 'https://discord.com/invite/ps2h6QT',
+      'to': 'https://go.nuxt.com/discord',
       'target': '_blank',
       'aria-label': 'Nuxt UI on Discord'
     }, {
       'icon': 'i-simple-icons-x',
-      'to': 'https://x.com/nuxt_js',
+      'to': 'https://go.nuxt.com/x',
       'target': '_blank',
       'aria-label': 'Nuxt on X'
     }, {

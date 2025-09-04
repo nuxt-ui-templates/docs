@@ -20,8 +20,8 @@ Build professional documentation with Nuxt UI's powerful components, enhanced ty
 #links
   :::u-button
   ---
-  size: xl
   to: /getting-started
+  size: xl
   trailing-icon: i-lucide-arrow-right
   ---
   Get started
@@ -29,12 +29,12 @@ Build professional documentation with Nuxt UI's powerful components, enhanced ty
 
   :::u-button
   ---
-  color: neutral
   icon: i-simple-icons-github
+  color: neutral
+  variant: outline
   size: xl
-  target: _blank
   to: https://github.com/nuxt-ui-templates/docs
-  variant: subtle
+  target: _blank
   ---
   Use this template
   :::
@@ -253,10 +253,9 @@ Enhanced with Nuxt Content
       target: _blank
       variant: subtle
       icon: i-simple-icons-github
-  description: Join developers worldwide building beautiful documentation with Nuxt UI.
-    Get started in minutes with our production-ready template.
-  title: Ready to create amazing docs?
-  variant: subtle
+  title: Ready to build an amazing documentation?
+  description: Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today.
+  class: dark:bg-neutral-950
   ---
 
   :stars-bg

@@ -3,9 +3,7 @@ export default defineAppConfig({
     colors: {
       primary: 'green',
       neutral: 'slate'
-    }
-  },
-  uiPro: {
+    },
     footer: {
       slots: {
         root: 'border-t border-default',
@@ -28,13 +26,13 @@ export default defineAppConfig({
     colorMode: true,
     links: [{
       'icon': 'i-simple-icons-github',
-      'to': 'https://github.com/nuxt-ui-pro/docs',
+      'to': 'https://github.com/nuxt-ui-templates/docs',
       'target': '_blank',
       'aria-label': 'GitHub'
     }]
   },
   footer: {
-    credits: `Copyright © ${new Date().getFullYear()}`,
+    credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-nuxtdotjs',
@@ -43,12 +41,12 @@ export default defineAppConfig({
       'aria-label': 'Nuxt Website'
     }, {
       'icon': 'i-simple-icons-discord',
-      'to': 'https://discord.com/invite/ps2h6QT',
+      'to': 'https://go.nuxt.com/discord',
       'target': '_blank',
       'aria-label': 'Nuxt UI on Discord'
     }, {
       'icon': 'i-simple-icons-x',
-      'to': 'https://x.com/nuxt_js',
+      'to': 'https://go.nuxt.com/x',
       'target': '_blank',
       'aria-label': 'Nuxt on X'
     }, {
@@ -62,7 +60,7 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/nuxt-ui-pro/docs/edit/main/content',
+      edit: 'https://github.com/nuxt-ui-templates/docs/edit/main/content',
       links: [{
         icon: 'i-lucide-star',
         label: 'Star on GitHub',
@@ -70,13 +68,8 @@ export default defineAppConfig({
         target: '_blank'
       }, {
         icon: 'i-lucide-book-open',
-        label: 'Nuxt UI Pro docs',
-        to: 'https://ui.nuxt.com/getting-started/installation/pro/nuxt',
-        target: '_blank'
-      }, {
-        icon: 'i-simple-icons-nuxtdotjs',
-        label: 'Purchase a license',
-        to: 'https://ui.nuxt.com/pro/purchase',
+        label: 'Nuxt UI docs',
+        to: 'https://ui4.nuxt.com/docs/getting-started/installation/nuxt',
         target: '_blank'
       }]
     }

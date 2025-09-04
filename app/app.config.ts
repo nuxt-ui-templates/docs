@@ -32,7 +32,7 @@ export default defineAppConfig({
     }]
   },
   footer: {
-    credits: `Copyright © ${new Date().getFullYear()}`,
+    credits: `Built with Nuxt UI • © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
       'icon': 'i-simple-icons-nuxtdotjs',
@@ -69,12 +69,7 @@ export default defineAppConfig({
       }, {
         icon: 'i-lucide-book-open',
         label: 'Nuxt UI docs',
-        to: 'https://ui.nuxt.com/getting-started/installation',
-        target: '_blank'
-      }, {
-        icon: 'i-lucide-arrow-right',
-        label: 'Get started',
-        to: 'https://ui.nuxt.com/getting-started/installation',
+        to: 'https://ui4.nuxt.com/docs/getting-started/installation/nuxt',
         target: '_blank'
       }]
     }

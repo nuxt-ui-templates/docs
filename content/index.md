@@ -1,29 +1,21 @@
 ---
 seo:
   title: Nuxt Docs Template
-  description: Nuxt UI is a collection of Vue components 
-    to create beautiful & responsive Nuxt applications in minutes.
+  description: Create stunning, fast and SEO-optimized documentation sites with Nuxt UI.
 ---
 
-::u-page-hero
+::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}
 ---
 orientation: horizontal
 ---
-  :::prose-pre
-  ---
-  code: npx nuxi init -t github:nuxt-ui-templates/docs
-  filename: Terminal
-  ---
-  ```bash
-  npx nuxi init -t github:nuxt-ui-templates/docs
-  ```
-  :::
+#top
+:hero-background
 
 #title
-Build your docs with Nuxt UI
+Ship Beautiful [Documentation]{.text-primary}.
 
 #description
-Nuxt UI is a collection of components to create beautiful & responsive applications in minutes.
+Build professional documentation with Nuxt UI's powerful components, enhanced typography, and seamless Nuxt Content integration. The same system trusted by the entire [Nuxt ecosystem](https://nuxt.com).
 
 #links
   :::u-button
@@ -46,11 +38,42 @@ Nuxt UI is a collection of components to create beautiful & responsive applicati
   ---
   Use this template
   :::
+
+#default
+  :::prose-pre
+  ---
+  code: |
+    export default defineNuxtConfig({
+      modules: [
+        '@nuxt/ui',
+        '@nuxt/content',
+        'nuxt-og-image',
+        'nuxt-llms'
+      ],
+
+      css: ['~/assets/css/main.css']
+    })
+  filename: nuxt.config.ts
+  ---
+
+  ```ts [nuxt.config.ts]
+  export default defineNuxtConfig({
+    modules: [
+      '@nuxt/ui',
+      '@nuxt/content',
+      'nuxt-og-image',
+      'nuxt-llms'
+    ],
+
+    css: ['~/assets/css/main.css']
+  })
+  ```
+  :::
 ::
 
-::u-page-section
+::u-page-section{class="dark:bg-neutral-950"}
 #title
-All-in-one documentation template
+Powered by Nuxt UI components
 
 #links
   :::u-button
@@ -58,110 +81,184 @@ All-in-one documentation template
   color: neutral
   size: lg
   target: _blank
-  to: https://ui.nuxt.com/getting-started/installation
+  to: https://ui4.nuxt.com/docs/getting-started/installation/nuxt
   trailingIcon: i-lucide-arrow-right
   variant: subtle
   ---
-  Discover Nuxt UI v4
+  Explore Nuxt UI
   :::
 
 #features
   :::u-page-feature
   ---
-  icon: i-simple-icons-nuxt
-  target: _blank
-  to: https://nuxt.com
+  icon: i-lucide-palette
   ---
   #title
-  Nuxt 3
+  100+ UI Components
 
   #description
-  Powered by Nuxt 3 for optimal performances and SEO.
+  Access the complete Nuxt UI component library. From badges to modals, everything styled and accessible out of the box.
   :::
 
   :::u-page-feature
   ---
-  icon: i-simple-icons-markdown
-  target: _blank
-  to: https://content.nuxt.com
+  icon: i-lucide-type
   ---
   #title
-  Markdown
+  Beautiful Typography
 
   #description
-  Write your pages with MDC thanks to Nuxt Content.
+  Pre-styled prose components with perfect visual harmony. No need for @tailwindcss/typography - get precise control over every element.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-sparkles
-  target: _blank
-  to: https://ui.nuxt.com
+  icon: i-lucide-layers
   ---
   #title
-  Nuxt UI v3
+  Rich Prose Components
 
   #description
-  Offers a very large set of full customizable components.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-typescript
-  target: _blank
-  to: https://www.typescriptlang.org
-  ---
-  #title
-  TypeScript
-
-  #description
-  A fully typed development experience.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-nuxtdotjs
-  target: _blank
-  to: https://content.nuxt.com/docs/studio
-  ---
-  #title
-  Nuxt Studio
-
-  #description
-  Supported by Nuxt Studio for fast updates and previews.
+  Accordions, cards, callouts, tabs, steps, code blocks, and more - all provided by Nuxt UI for interactive documentation.
   :::
 
   :::u-page-feature
   ---
   icon: i-lucide-search
-  target: _blank
-  to: https://ui.nuxt.com/components/content-search
   ---
   #title
-  Search
+  Built-in Search
 
   #description
-  A full-text search modal powered by Fuse.js.
+  Full-text search with ContentSearch component. No need for Algolia - instant, relevant results with keyboard shortcuts (⌘K).
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-navigation
+  ---
+  #title
+  Smart Navigation
+
+  #description
+  Auto-generated navigation with ContentNavigation and ContentToc components. Sticky table of contents and prev/next links.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-moon
+  ---
+  #title
+  Dark Mode Ready
+
+  #description
+  Automatic theme switching with smooth transitions. Respects system preferences and remembers user choice.
   :::
 ::
 
-::u-page-section
+::u-page-section{class="dark:bg-neutral-950"}
+#title
+Enhanced with Nuxt Content
+
+#links
+  :::u-button
+  ---
+  color: neutral
+  size: lg
+  target: _blank
+  to: https://content.nuxt.com/docs/getting-started/installation
+  trailingIcon: i-lucide-arrow-right
+  variant: subtle
+  ---
+  Explore Nuxt Content
+  :::
+
+#features
+  :::u-page-feature
+  ---
+  icon: i-simple-icons-markdown
+  ---
+  #title
+  MDC Enhanced Markdown
+
+  #description
+  Write in Markdown while embedding Vue components. Seamlessly integrate interactive elements in your content.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-file-text
+  ---
+  #title
+  File-based Routing
+
+  #description
+  Organize content in folders and files. Your documentation structure automatically becomes your navigation.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-code
+  ---
+  #title
+  Syntax Highlighting
+
+  #description
+  Beautiful code blocks with language detection, line numbers, and copy buttons. Support for 100+ languages.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-database
+  ---
+  #title
+  Content Database
+
+  #description
+  Query your content with a MongoDB-like API. Filter, sort, and search through your documentation programmatically.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-file-code
+  ---
+  #title
+  Frontmatter Support
+
+  #description
+  Add metadata to your content files. Define SEO tags, navigation properties, and custom fields.
+  :::
+
+  :::u-page-feature
+  ---
+  icon: i-lucide-git-branch
+  ---
+  #title
+  Version Control
+
+  #description
+  Content lives in your repository. Branch, review, and deploy documentation alongside your code.
+  :::
+::
+
+::u-page-section{class="dark:bg-gradient-to-b from-neutral-950 to-neutral-900"}
   :::u-page-c-t-a
   ---
   links:
-    - label: Get started
-      to: 'https://ui.nuxt.com/getting-started/installation'
-      target: _blank
-      icon: i-lucide-arrow-right
-    - label: Clone on GitHub
-      to: 'https://github.com/nuxt-ui-templates/landing'
+    - label: Start building
+      to: '/getting-started'
+      trailingIcon: i-lucide-arrow-right
+    - label: View on GitHub
+      to: 'https://github.com/nuxt-ui-templates/docs'
       target: _blank
       variant: subtle
       icon: i-simple-icons-github
-  description: Nuxt UI is a free and open-source UI library for Nuxt.
-    it in production.
-  title: Start with Nuxt UI today!
+  description: Join developers worldwide building beautiful documentation with Nuxt UI.
+    Get started in minutes with our production-ready template.
+  title: Ready to create amazing docs?
   variant: subtle
   ---
+
+  :stars-bg
   :::
 ::

@@ -32,13 +32,5 @@
   "resolutions": {
     "unimport": "4.1.1"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3"
-    ],
-    "ignoredBuiltDependencies": [
-      "vue-demi"
-    ]
-  },
   "packageManager": "pnpm@10.15.0"
 }

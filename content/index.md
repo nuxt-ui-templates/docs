@@ -81,7 +81,7 @@ Powered by Nuxt UI components
   color: neutral
   size: lg
   target: _blank
-  to: https://ui4.nuxt.com/docs/getting-started/installation/nuxt
+  to: https://ui.nuxt.com/docs/getting-started/installation/nuxt
   trailingIcon: i-lucide-arrow-right
   variant: subtle
   ---

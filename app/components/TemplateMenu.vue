@@ -30,6 +30,7 @@
       label: 'Changelog',
       to: 'https://changelog-template.nuxt.dev/'
     }]"
+    :content="{ align: 'start' }"
     :ui="{ content: 'min-w-fit' }"
     size="xs"
   >

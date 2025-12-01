@@ -5,8 +5,6 @@ const route = useRoute()
 const toast = useToast()
 const { copy, copied } = useClipboard()
 const site = useSiteConfig()
-const isCopying = ref(false)
-console.log(site)
 
 const mdPath = computed(() => `${site.url}/raw${route.path}.md`)
 
@@ -43,9 +41,7 @@ const items = [
 ]
 
 async function copyPage() {
-  isCopying.value = true
   copy(await $fetch<string>(`/raw${route.path}.md`))
-  isCopying.value = false
 }
 </script>
 
@@ -56,7 +52,6 @@ async function copyPage() {
       :icon="copied ? 'i-lucide-copy-check' : 'i-lucide-copy'"
       color="neutral"
       variant="outline"
-      :loading="isCopying"
       :ui="{
         leadingIcon: [copied ? 'text-primary' : 'text-neutral', 'size-3.5']
       }"
@@ -78,6 +73,7 @@ async function copyPage() {
         size="sm"
         color="neutral"
         variant="outline"
+        aria-label="Open copy actions menu"
       />
     </UDropdownMenu>
   </UFieldGroup>

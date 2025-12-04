@@ -19,7 +19,7 @@ WORKFLOW: This tool returns the complete page content including title, descripti
   cache: '1h',
   handler: async ({ path }) => {
     const event = useEvent()
-    const siteUrl = import.meta.dev ? 'http://localhost:3000' : 'https://mcp-toolkit.nuxt.dev'
+    const siteUrl = import.meta.dev ? 'http://localhost:3000' : getRequestURL(event).origin
 
     try {
       const page = await queryCollection(event, 'docs')

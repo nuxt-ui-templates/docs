@@ -22,7 +22,8 @@ OUTPUT: Returns a structured list with:
   cache: '1h',
   handler: async () => {
     const event = useEvent()
-    const siteUrl = import.meta.dev ? 'http://localhost:3000' : getRequestURL(event).origin
+    const url = getRequestURL(event)
+    const siteUrl = import.meta.dev ? `${url.protocol}//${url.hostname}:${url.port}` : url.origin
 
     try {
       const pages = await queryCollection(event, 'docs')

@@ -27,8 +27,8 @@ importers:
         specifier: ^4.4.0
         version: 4.4.0(@nuxt/content@3.11.2(better-sqlite3@12.6.2)(magicast@0.5.2))(@tiptap/extensions@3.19.0(@tiptap/core@3.19.0(@tiptap/pm@3.19.0))(@tiptap/pm@3.19.0))(@tiptap/y-tiptap@3.0.2(prosemirror-model@1.25.4)(prosemirror-state@1.4.4)(prosemirror-view@1.41.6)(y-protocols@1.0.7(yjs@13.6.29))(yjs@13.6.29))(change-case@5.4.4)(db0@0.3.4(better-sqlite3@12.6.2))(embla-carousel@8.6.0)(ioredis@5.9.3)(magicast@0.5.2)(tailwindcss@4.1.18)(typescript@5.9.3)(vite@7.3.1(@types/node@25.2.3)(jiti@2.6.1)(lightningcss@1.31.1)(terser@5.46.0)(yaml@2.8.2))(vue-router@4.6.4(vue@3.5.28(typescript@5.9.3)))(vue@3.5.28(typescript@5.9.3))(yjs@13.6.29)(zod@4.3.6)
       '@nuxtjs/mcp-toolkit':
-        specifier: 0.6.4
-        version: 0.6.4(magicast@0.5.2)(zod@4.3.6)
+        specifier: ^0.7.0
+        version: 0.7.0(magicast@0.5.2)(zod@4.3.6)
       '@nuxtjs/mdc':
         specifier: ^0.20.1
         version: 0.20.1(magicast@0.5.2)
@@ -1085,10 +1085,10 @@ packages:
   '@nuxtjs/color-mode@3.5.2':
     resolution: {integrity: sha512-cC6RfgZh3guHBMLLjrBB2Uti5eUoGM9KyauOaYS9ETmxNWBMTvpgjvSiSJp1OFljIXPIqVTJ3xtJpSNZiO3ZaA==}
 
-  '@nuxtjs/mcp-toolkit@0.6.4':
-    resolution: {integrity: sha512-0mGQJe5NviNRIaUtCxNhMalh6bsVIJ3XLm894P6b1bCxAvXBnt2rsORkqFfPoZHj04iv90620NI7VQhXf/Z52w==}
+  '@nuxtjs/mcp-toolkit@0.7.0':
+    resolution: {integrity: sha512-aOgVFqvH9+Jzk2EAn+kGfsOAi4sxwEuxyO9CvhtcTBPPZq8fuxcIk7gBH+/UCL7/5oK13z9kUMWE9eOK5g7JnA==}
     peerDependencies:
-      agents: '>=0.4.0'
+      agents: '>=0.4.1'
       zod: ^4.1.13
     peerDependenciesMeta:
       agents:
@@ -8036,7 +8036,7 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@nuxtjs/mcp-toolkit@0.6.4(magicast@0.5.2)(zod@4.3.6)':
+  '@nuxtjs/mcp-toolkit@0.7.0(magicast@0.5.2)(zod@4.3.6)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.26.0(zod@4.3.6)
       '@nuxt/kit': 4.3.1(magicast@0.5.2)

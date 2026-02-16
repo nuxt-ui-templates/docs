@@ -11,15 +11,15 @@
     "typecheck": "nuxt typecheck"
   },
   "dependencies": {
-    "@iconify-json/lucide": "^1.2.89",
+    "@iconify-json/lucide": "^1.2.90",
     "@iconify-json/simple-icons": "^1.2.70",
-    "@iconify-json/vscode-icons": "^1.2.40",
+    "@iconify-json/vscode-icons": "^1.2.42",
     "@nuxt/content": "^3.11.2",
     "@nuxt/image": "^2.0.0",
     "@nuxt/ui": "^4.4.0",
-    "@nuxtjs/mcp-toolkit": "0.6.3",
+    "@nuxtjs/mcp-toolkit": "0.6.4",
     "@nuxtjs/mdc": "^0.20.1",
-    "@vueuse/core": "^14.2.0",
+    "@vueuse/core": "^14.2.1",
     "better-sqlite3": "^12.6.2",
     "minimark": "^0.2.0",
     "nuxt": "^4.3.1",
@@ -31,10 +31,10 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@nuxt/eslint": "^1.14.0",
+    "@nuxt/eslint": "^1.15.1",
     "eslint": "^10.0.0",
     "typescript": "^5.9.3",
     "vue-tsc": "^3.2.4"
   },
-  "packageManager": "pnpm@10.29.2"
+  "packageManager": "pnpm@10.29.3"
 }

@@ -83,5 +83,9 @@ export default defineNuxtConfig({
 
   mcp: {
     name: 'Docs template'
+  },
+
+  ogImage: {
+    zeroRuntime: true
   }
 })

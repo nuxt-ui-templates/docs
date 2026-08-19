@@ -7,7 +7,7 @@ const toast = useToast()
 const { copy, copied } = useClipboard()
 const site = useSiteConfig()
 
-const routePath = computed(() => withoutTrailingSlash(route.path) || '/')
+const routePath = computed(() => withoutTrailingSlash(route.path))
 const mdPath = computed(() => `${site.url}/raw${routePath.value}.md`)
 
 const items = [

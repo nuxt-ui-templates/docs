@@ -10,7 +10,7 @@ definePageMeta({
 const route = useRoute()
 const { toc } = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
-const routePath = computed(() => withoutTrailingSlash(route.path) || '/')
+const routePath = computed(() => withoutTrailingSlash(route.path))
 
 const { data: page } = await useAsyncData(routePath.value, () => queryCollection('docs').path(routePath.value).first())
 if (!page.value) {

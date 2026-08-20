@@ -22,5 +22,6 @@ useSeoMeta({
     v-if="page"
     :value="page"
     :prose="false"
+    :components="{ a: 'prose-a' }"
   />
 </template>

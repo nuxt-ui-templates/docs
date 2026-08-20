@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { useClipboard } from '@vueuse/core'
+import { withoutTrailingSlash } from 'ufo'
 
 const route = useRoute()
 const toast = useToast()
 const { copy, copied } = useClipboard()
 const site = useSiteConfig()
 
-const mdPath = computed(() => `${site.url}/raw${route.path}.md`)
+const routePath = computed(() => withoutTrailingSlash(route.path))
+const mdPath = computed(() => `${site.url}/raw${routePath.value}.md`)
 
 const items = [
   {
@@ -24,7 +26,7 @@ const items = [
     label: 'View as Markdown',
     icon: 'i-simple-icons:markdown',
     target: '_blank',
-    to: `/raw${route.path}.md`
+    to: `/raw${routePath.value}.md`
   },
   {
     label: 'Open in ChatGPT',
@@ -41,7 +43,7 @@ const items = [
 ]
 
 async function copyPage() {
-  copy(await $fetch<string>(`/raw${route.path}.md`))
+  copy(await $fetch<string>(`/raw${routePath.value}.md`))
 }
 </script>
 

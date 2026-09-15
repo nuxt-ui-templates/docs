@@ -19,8 +19,8 @@
     "@nuxt/ui": "^4.11.1",
     "@nuxtjs/mcp-toolkit": "^0.21.0",
     "@nuxtjs/mdc": "^0.23.1",
-    "@vueuse/core": "^14.4.0",
     "@takumi-rs/core": "^2.13.7",
+    "@vueuse/core": "^14.4.0",
     "minimark": "^0.2.0",
     "nuxt": "^4.5.2",
     "nuxt-llms": "0.2.0",
@@ -33,6 +33,7 @@
   "devDependencies": {
     "@nuxt/eslint": "^1.17.0",
     "eslint": "^10.10.0",
+    "eslint-plugin-better-tailwindcss": "^4.7.0",
     "typescript": "^6.0.3",
     "vue-tsc": "^3.3.11"
   },

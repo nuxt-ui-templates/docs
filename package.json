@@ -20,7 +20,7 @@
     "@nuxtjs/mcp-toolkit": "^0.22.0",
     "@nuxtjs/mdc": "^0.23.2",
     "@takumi-rs/core": "^2.14.0",
-    "@vueuse/core": "^14.4.0",
+    "@vueuse/core": "^15.0.0",
     "minimark": "^0.2.0",
     "nuxt": "^4.6.0",
     "nuxt-llms": "0.2.0",

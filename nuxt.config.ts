@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-og-image',
     'nuxt-llms',
+    'nuxt-agent-discovery',
     '@nuxtjs/mcp-toolkit'
   ],
 

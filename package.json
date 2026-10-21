@@ -21,7 +21,6 @@
     "@nuxtjs/mdc": "^0.23.2",
     "@takumi-rs/core": "^2.16.3",
     "@vueuse/core": "^14.4.0",
-    "minimark": "^0.2.0",
     "nuxt": "^4.6.2",
     "nuxt-llms": "0.2.0",
     "nuxt-og-image": "^6.10.4",

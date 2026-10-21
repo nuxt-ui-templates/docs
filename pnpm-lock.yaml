@@ -175,6 +175,9 @@ importers:
       '@iconify-json/vscode-icons':
         specifier: ^1.2.90
         version: 1.2.90
+      '@modelcontextprotocol/sdk':
+        specifier: ^1.32.1
+        version: 1.32.1(supports-color@10.2.2)(zod@4.6.7)
       '@nuxt/content':
         specifier: ^3.16.2
         version: 3.16.2(@nuxt/schema@4.6.2)(@oxc-project/types@0.151.0)(@valibot/to-json-schema@1.7.1(valibot@1.4.2(typescript@6.0.3)))(confbox@0.3.1)(dotenv@17.4.2)(esbuild@0.28.0)(giget@3.3.1)(magic-string@1.4.3)(magicast@0.5.5)(mlly@1.8.2)(oxc-parser@0.151.0)(rolldown@1.2.12)(rollup@4.60.4)(supports-color@10.2.2)(valibot@1.4.2(typescript@6.0.3))(vite@8.3.4(@types/node@25.9.0)(esbuild@0.28.0)(jiti@2.7.0)(terser@5.47.1)(yaml@2.9.0))

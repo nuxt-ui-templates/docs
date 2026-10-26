@@ -46,7 +46,7 @@ export default defineNuxtConfig({
   },
 
   llms: {
-    domain: 'https://docs-template.nuxt.dev/',
+    domain: 'https://docs-template.nuxt.dev',
     title: 'Nuxt Docs Template',
     description: 'A template for building documentation with Nuxt UI and Nuxt Content.',
     full: {
@@ -66,6 +66,13 @@ export default defineNuxtConfig({
         contentCollection: 'docs',
         contentFilters: [
           { field: 'path', operator: 'LIKE', value: '/essentials%' }
+        ]
+      },
+      {
+        title: 'AI',
+        contentCollection: 'docs',
+        contentFilters: [
+          { field: 'path', operator: 'LIKE', value: '/ai%' }
         ]
       }
     ]

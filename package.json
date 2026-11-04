@@ -21,7 +21,7 @@
     "@nuxtjs/mdc": "^0.23.2",
     "@takumi-rs/core": "^2.19.0",
     "@vueuse/core": "^14.4.0",
-    "nuxt": "^4.6.3",
+    "nuxt": "^4.6.4",
     "nuxt-llms": "0.3.1",
     "nuxt-og-image": "^7.0.7",
     "tailwindcss": "^4.3.3",

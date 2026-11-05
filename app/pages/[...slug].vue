@@ -12,6 +12,10 @@ const { toc } = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 const routePath = computed(() => withoutTrailingSlash(route.path))
 
+// `::install-button` comes from `@nuxtjs/mcp-toolkit`, whose package doesn't export the
+// component file, so it is resolved by name instead of imported.
+const installButton = resolveComponent('InstallButton')
+
 const { data: page } = await useAsyncData(routePath.value, () => content.get(routePath.value))
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
@@ -99,6 +103,7 @@ const links = computed(() => {
       <ContentRenderer
         v-if="page"
         :value="page"
+        :components="{ 'install-button': installButton }"
       />
 
       <USeparator v-if="surround?.length" />

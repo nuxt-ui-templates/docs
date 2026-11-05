@@ -6,7 +6,7 @@ description: Create stunning, fast and SEO-optimized documentation sites with Nu
 navigation: false
 ---
 
-::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}
+::page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}
 ---
 orientation: horizontal
 ---
@@ -20,7 +20,7 @@ Ship Beautiful [Documentation]{.text-primary}.
 Build professional documentation with Nuxt UI's powerful components, enhanced typography, and seamless Nuxt Content integration. The same system trusted by the entire [Nuxt ecosystem](https://nuxt.com).
 
 #links
-  :::u-button
+  :::button
   ---
   to: /getting-started
   size: xl
@@ -29,7 +29,7 @@ Build professional documentation with Nuxt UI's powerful components, enhanced ty
   Get started
   :::
 
-  :::u-button
+  :::button
   ---
   icon: i-simple-icons-github
   color: neutral
@@ -42,22 +42,6 @@ Build professional documentation with Nuxt UI's powerful components, enhanced ty
   :::
 
 #default
-  :::prose-pre
-  ---
-  code: |
-    export default defineNuxtConfig({
-      modules: [
-        '@nuxt/ui',
-        '@nuxt/content',
-        'nuxt-og-image',
-        'nuxt-llms'
-      ],
-
-      css: ['~/assets/css/main.css']
-    })
-  filename: nuxt.config.ts
-  ---
-
   ```ts [nuxt.config.ts]
   export default defineNuxtConfig({
     modules: [
@@ -70,15 +54,14 @@ Build professional documentation with Nuxt UI's powerful components, enhanced ty
     css: ['~/assets/css/main.css']
   })
   ```
-  :::
 ::
 
-::u-page-section{class="dark:bg-neutral-950"}
+::page-section{class="dark:bg-neutral-950"}
 #title
 Powered by Nuxt UI components
 
 #links
-  :::u-button
+  :::button
   ---
   color: neutral
   size: lg
@@ -91,7 +74,7 @@ Powered by Nuxt UI components
   :::
 
 #features
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-palette
   ---
@@ -102,7 +85,7 @@ Powered by Nuxt UI components
   Access the complete Nuxt UI component library. From badges to modals, everything styled and accessible out of the box.
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-type
   ---
@@ -113,7 +96,7 @@ Powered by Nuxt UI components
   Pre-styled prose components with perfect visual harmony. No need for @tailwindcss/typography - get precise control over every element.
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-layers
   ---
@@ -124,7 +107,7 @@ Powered by Nuxt UI components
   Accordions, cards, callouts, tabs, steps, code blocks, and more - all provided by Nuxt UI for interactive documentation.
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-search
   ---
@@ -135,7 +118,7 @@ Powered by Nuxt UI components
   Full-text search with ContentSearch component. No need for Algolia - instant, relevant results with keyboard shortcuts (⌘K).
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-navigation
   ---
@@ -146,7 +129,7 @@ Powered by Nuxt UI components
   Auto-generated navigation with ContentNavigation and ContentToc components. Sticky table of contents and prev/next links.
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-moon
   ---
@@ -158,12 +141,12 @@ Powered by Nuxt UI components
   :::
 ::
 
-::u-page-section{class="dark:bg-neutral-950"}
+::page-section{class="dark:bg-neutral-950"}
 #title
 Enhanced with Nuxt Content
 
 #links
-  :::u-button
+  :::button
   ---
   color: neutral
   size: lg
@@ -176,7 +159,7 @@ Enhanced with Nuxt Content
   :::
 
 #features
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-simple-icons-markdown
   ---
@@ -187,7 +170,7 @@ Enhanced with Nuxt Content
   Write in Markdown while embedding Vue components. Seamlessly integrate interactive elements in your content.
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-file-text
   ---
@@ -198,7 +181,7 @@ Enhanced with Nuxt Content
   Organize content in folders and files. Your documentation structure automatically becomes your navigation.
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-code
   ---
@@ -209,7 +192,7 @@ Enhanced with Nuxt Content
   Beautiful code blocks with language detection, line numbers, and copy buttons. Support for 100+ languages.
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-database
   ---
@@ -220,7 +203,7 @@ Enhanced with Nuxt Content
   Query your content with a MongoDB-like API. Filter, sort, and search through your documentation programmatically.
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-file-code
   ---
@@ -231,7 +214,7 @@ Enhanced with Nuxt Content
   Add metadata to your content files. Define SEO tags, navigation properties, and custom fields.
   :::
 
-  :::u-page-feature
+  :::page-feature
   ---
   icon: i-lucide-git-branch
   ---
@@ -243,8 +226,8 @@ Enhanced with Nuxt Content
   :::
 ::
 
-::u-page-section{class="dark:bg-gradient-to-b from-neutral-950 to-neutral-900"}
-  :::u-page-c-t-a
+::page-section{class="dark:bg-gradient-to-b from-neutral-950 to-neutral-900"}
+  :::page-cta
   ---
   links:
     - label: Start building

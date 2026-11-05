@@ -34,6 +34,16 @@ export default defineNuxtConfig({
     v3Composables: true,
     build: {
       markdown: {
+        // v4 highlights only when configured, where v3's `@nuxtjs/mdc` did it by default, and
+        // Nuxt UI hands its themes to `mdc.highlight`, which v4 doesn't read. Same themes, until
+        // Nuxt UI configures the v4 option itself.
+        highlight: {
+          theme: {
+            light: 'material-theme-lighter',
+            default: 'material-theme',
+            dark: 'material-theme-palenight'
+          }
+        },
         toc: {
           searchDepth: 1
         }

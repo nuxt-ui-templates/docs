@@ -1,6 +1,9 @@
 ---
 title: Nuxt Docs Template
 description: Create stunning, fast and SEO-optimized documentation sites with Nuxt UI.
+# v4 serves `content/` as one source, so the landing page is part of the same
+# navigation tree as the docs: keep it out of the aside and the prev/next links.
+navigation: false
 ---
 
 ::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}

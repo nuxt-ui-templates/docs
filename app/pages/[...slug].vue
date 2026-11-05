@@ -12,19 +12,44 @@ const { toc } = useAppConfig()
 const navigation = inject<Ref<ContentNavigationItem[]>>('navigation')
 const routePath = computed(() => withoutTrailingSlash(route.path))
 
-const { data: page } = await useAsyncData(routePath.value, () => queryCollection('docs').path(routePath.value).first())
+const { data: page } = await useAsyncData(routePath.value, () => content.get(routePath.value))
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
+// v4 has no native prev/next API, so this stays on the v3 compatibility layer.
+// Its empty slot is typed `null` where v3's type hid it; `UContentSurround` renders
+// an empty column for it, hence the cast in the template below.
 const { data: surround } = await useAsyncData(`${routePath.value}-surround`, () => {
-  return queryCollectionItemSurroundings('docs', routePath.value, {
+  return queryCollectionItemSurroundings('content', routePath.value, {
     fields: ['description']
   })
 })
 
-const title = page.value.seo?.title || page.value.title
-const description = page.value.seo?.description || page.value.description
+const title = page.value.data.title
+const description = page.value.data.description
+
+// v4 types frontmatter from the documents themselves, so a field no page uses yet
+// (`links`, the header action buttons) is not part of `page.data`'s type.
+interface PageLink {
+  label: string
+  icon?: string
+  to: string
+  target?: string
+}
+
+const pageLinks = computed<PageLink[]>(() => (page.value?.data as { links?: PageLink[] }).links ?? [])
+
+interface TocLink {
+  id: string
+  text: string
+  depth: number
+  children?: TocLink[]
+}
+
+// The client `content` type exposes `meta` as `Record<string, unknown>`, so the table of
+// contents the toc plugin attaches needs its shape spelled out.
+const tocLinks = computed<TocLink[]>(() => (page.value?.meta.toc as { links?: TocLink[] } | undefined)?.links ?? [])
 
 useSeoMeta({
   title,
@@ -43,7 +68,7 @@ const links = computed(() => {
     links.push({
       icon: 'i-lucide-external-link',
       label: 'Edit this page',
-      to: `${toc.bottom.edit}/${page?.value?.stem}.${page?.value?.extension}`,
+      to: `${toc.bottom.edit}/${page?.value?.meta.stem}${page?.value?.meta.extension}`,
       target: '_blank'
     })
   }
@@ -55,13 +80,13 @@ const links = computed(() => {
 <template>
   <UPage v-if="page">
     <UPageHeader
-      :title="page.title"
-      :description="page.description"
+      :title="page.data.title"
+      :description="page.data.description"
       :headline="headline"
     >
       <template #links>
         <UButton
-          v-for="(link, index) in page.links"
+          v-for="(link, index) in pageLinks"
           :key="index"
           v-bind="link"
         />
@@ -78,16 +103,16 @@ const links = computed(() => {
 
       <USeparator v-if="surround?.length" />
 
-      <UContentSurround :surround="surround" />
+      <UContentSurround :surround="surround as ContentNavigationItem[]" />
     </UPageBody>
 
     <template
-      v-if="page?.body?.toc?.links?.length"
+      v-if="tocLinks.length"
       #right
     >
       <UContentToc
         :title="toc?.title"
-        :links="page.body?.toc?.links"
+        :links="tocLinks"
       >
         <template
           v-if="toc?.bottom"
@@ -95,10 +120,10 @@ const links = computed(() => {
         >
           <div
             class="hidden lg:block space-y-6"
-            :class="{ 'mt-6!': page.body?.toc?.links?.length }"
+            :class="{ 'mt-6!': tocLinks.length }"
           >
             <USeparator
-              v-if="page.body?.toc?.links?.length"
+              v-if="tocLinks.length"
               type="dashed"
             />
 

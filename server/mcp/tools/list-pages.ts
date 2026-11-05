@@ -1,5 +1,3 @@
-import { queryCollection } from '@nuxt/content/server'
-
 export default defineMcpTool({
   description: `Lists all available documentation pages with their categories and basic information.
 
@@ -26,14 +24,15 @@ OUTPUT: Returns a structured list with:
     const siteUrl = import.meta.dev ? `${url.protocol}//${url.hostname}:${url.port}` : url.origin
 
     try {
-      const pages = await queryCollection(event, 'docs')
-        .select('title', 'path', 'description')
-        .all()
+      // `list()` walks the source; order by stem so the listing follows the sidebar,
+      // as the v3 collection query did.
+      const pages = await content.list()
+      pages.sort((a, b) => a.meta.stem.localeCompare(b.meta.stem, undefined, { numeric: true }))
 
       const result = pages.map(page => ({
-        title: page.title,
+        title: page.data.title ?? null,
         path: page.path,
-        description: page.description,
+        description: page.data.description ?? null,
         url: `${siteUrl}${page.path}`
       }))
 

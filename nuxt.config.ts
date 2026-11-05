@@ -1,3 +1,12 @@
+// `nuxt-agent-discovery` picks the pages of an `llms.sections` entry from a navigation
+// subtree on v4, where v3's `contentCollection`/`contentFilters` were declared by
+// `@nuxt/content`'s llms feature. Declared here until the module declares it itself.
+declare module 'nuxt-llms' {
+  interface LLMsSection {
+    navigation?: string
+  }
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -18,15 +27,17 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
 
   content: {
+    // v4 serves the native `content.get()` / `content.navigation()` API, but has no equivalent
+    // for two v3 features this template uses, so the v3 compatibility layer stays on for them:
+    // search sections (`queryCollectionSearchSections`, `UContentSearch`) and prev/next links
+    // (`queryCollectionItemSurroundings`).
+    v3Composables: true,
     build: {
       markdown: {
         toc: {
           searchDepth: 1
         }
       }
-    },
-    experimental: {
-      sqliteConnector: 'native'
     }
   },
 
@@ -56,24 +67,16 @@ export default defineNuxtConfig({
     sections: [
       {
         title: 'Getting Started',
-        contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/getting-started%' }
-        ]
+        // v4 has no collections, so sections select a navigation subtree instead of a collection.
+        navigation: '/getting-started'
       },
       {
         title: 'Essentials',
-        contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/essentials%' }
-        ]
+        navigation: '/essentials'
       },
       {
         title: 'AI',
-        contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/ai%' }
-        ]
+        navigation: '/ai'
       }
     ]
   },

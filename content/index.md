@@ -227,7 +227,7 @@ Enhanced with Nuxt Content
 ::
 
 ::page-section{class="dark:bg-gradient-to-b from-neutral-950 to-neutral-900"}
-  :::page-cta
+  :::page-c-t-a
   ---
   links:
     - label: Start building

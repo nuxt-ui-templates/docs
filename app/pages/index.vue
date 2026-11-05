@@ -2,7 +2,7 @@
 // Markdown tags (`::page-hero`, `:::button`) resolve from the components passed to the
 // renderer below: Nuxt Content only bundles project components, so Nuxt UI's are imported here.
 import Button from '@nuxt/ui/components/Button.vue'
-import PageCTA from '@nuxt/ui/components/PageCTA.vue'
+import ProseCta from '@nuxt/ui/components/PageCTA.vue'
 import PageFeature from '@nuxt/ui/components/PageFeature.vue'
 import PageHero from '@nuxt/ui/components/PageHero.vue'
 import PageSection from '@nuxt/ui/components/PageSection.vue'
@@ -30,6 +30,6 @@ useSeoMeta({
   <ContentRenderer
     v-if="page"
     :value="page"
-    :components="{ ProseA, PageHero, PageSection, PageFeature, PageCTA, Button }"
+    :components="{ ProseA, PageHero, PageSection, PageFeature, ProseCta, Button }"
   />
 </template>

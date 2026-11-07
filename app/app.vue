@@ -1,8 +1,9 @@
 <script setup lang="ts">
 const { seo } = useAppConfig()
 
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'))
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
+const { data: navigation } = await useAsyncData('navigation', () => content.navigation())
+// v4 has no native search-sections API, so this stays on the v3 compatibility layer.
+const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('content'), {
   server: false
 })
 

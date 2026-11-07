@@ -1,11 +1,20 @@
 <script setup lang="ts">
-const { data: page } = await useAsyncData('index', () => queryCollection('landing').path('/').first())
+// Markdown tags (`::page-hero`, `:::button`) resolve from the components passed to the
+// renderer below: Nuxt Content only bundles project components, so Nuxt UI's are imported here.
+import Button from '@nuxt/ui/components/Button.vue'
+import ProseCta from '@nuxt/ui/components/PageCTA.vue'
+import PageFeature from '@nuxt/ui/components/PageFeature.vue'
+import PageHero from '@nuxt/ui/components/PageHero.vue'
+import PageSection from '@nuxt/ui/components/PageSection.vue'
+import { ProseA } from '@nuxt/ui/components/prose'
+
+const { data: page } = await useAsyncData('index', () => content.get('/'))
 if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 }
 
-const title = page.value.seo?.title || page.value.title
-const description = page.value.seo?.description || page.value.description
+const title = page.value.data.title
+const description = page.value.data.description
 
 useSeoMeta({
   titleTemplate: '',
@@ -21,7 +30,6 @@ useSeoMeta({
   <ContentRenderer
     v-if="page"
     :value="page"
-    :prose="false"
-    :components="{ a: 'prose-a' }"
+    :components="{ ProseA, PageHero, PageSection, PageFeature, ProseCta, Button }"
   />
 </template>

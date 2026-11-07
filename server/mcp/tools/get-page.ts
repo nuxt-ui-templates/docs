@@ -1,5 +1,4 @@
 import { z } from 'zod'
-import { queryCollection } from '@nuxt/content/server'
 
 export default defineMcpTool({
   description: `Retrieves the full content and details of a specific documentation page.
@@ -23,10 +22,7 @@ WORKFLOW: This tool returns the complete page content including title, descripti
     const siteUrl = import.meta.dev ? `${url.protocol}//${url.hostname}:${url.port}` : url.origin
 
     try {
-      const page = await queryCollection(event, 'docs')
-        .where('path', '=', path)
-        .select('title', 'path', 'description')
-        .first()
+      const page = await content.get(path)
 
       if (!page) {
         return {
@@ -35,15 +31,15 @@ WORKFLOW: This tool returns the complete page content including title, descripti
         }
       }
 
-      const content = await $fetch<string>(`/raw${path}.md`, {
+      const markdown = await $fetch<string>(`/raw${path}.md`, {
         baseURL: siteUrl
       })
 
       const result = {
-        title: page.title,
+        title: page.data.title,
         path: page.path,
-        description: page.description,
-        content,
+        description: page.data.description,
+        content: markdown,
         url: `${siteUrl}${page.path}`
       }
 

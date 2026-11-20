@@ -30,6 +30,17 @@ export default defineNuxtConfig({
     }
   },
 
+  ui: {
+    eslint: {
+      ignore: ['^stars$', '^star-layer$', '^star$'],
+      rules: {
+        'no-unknown-classes': 'error',
+        'no-conflicting-classes': 'error',
+        'no-palette-colors': 'error'
+      }
+    }
+  },
+
   experimental: {
     asyncContext: true
   },

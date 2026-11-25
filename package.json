@@ -20,7 +20,7 @@
     "@nuxtjs/mcp-toolkit": "^0.24.3",
     "@nuxtjs/mdc": "^0.23.4",
     "@takumi-rs/core": "^2.22.1",
-    "@vueuse/core": "^14.4.0",
+    "@vueuse/core": "^15.1.0",
     "nuxt": "^4.7.0",
     "nuxt-llms": "0.3.2",
     "nuxt-og-image": "^7.0.7",
